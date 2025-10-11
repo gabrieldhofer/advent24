@@ -1,5 +1,5 @@
 
-\echo "whoa!!"
+\echo "Day 1 - Advent of Code 2024 !!"
 
 copy report3 from '/home/gabrieldhofer/Desktop/advent24/input.txt';
 
