@@ -1,3 +1,7 @@
 default:
-	sudo -u postgres psql postgres -f day1.sql
+	run day1.sql
+
+one:
+	run day1.sql
+
 
