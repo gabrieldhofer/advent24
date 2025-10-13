@@ -28,9 +28,18 @@ BEGIN
     --SELECT r.arr ;
     --SELECT * from unnest(r.arr);
     raise notice ' % ', r.arr;
+
+    CREATE TEMP TABLE tmp3 as 
+    SELECT * FROM unnest(r.arr);
+
+    DROP TABLE tmp3;
+
   END LOOP;
 END $$;
 
 -- TODO: learn postgres SQL datatypes
 --FETCH NEXT 1 FROM mycursor;
+
+
+
 
