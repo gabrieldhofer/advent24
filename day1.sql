@@ -24,9 +24,7 @@ DECLARE
   r RECORD;
 BEGIN
   FOR r in select * from tmp2 loop
-    --RAISE NOTICE "arr: %", r.arr;
-    --SELECT r.arr ;
-    --SELECT * from unnest(r.arr);
+
     raise notice ' % ', r.arr;
 
     CREATE TEMP TABLE tmp3 as 
