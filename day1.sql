@@ -27,9 +27,11 @@ BEGIN
 
     raise notice ' % ', r.arr;
 
+    -- create new temp table
     CREATE TEMP TABLE tmp3 as 
     SELECT * FROM unnest(r.arr);
 
+    --
     select * from tmp3;
 
     DROP TABLE tmp3;
