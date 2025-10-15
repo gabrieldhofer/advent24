@@ -1,3 +1,8 @@
+#### online docs
+- https://neon.com/postgresql/postgresql-advanced
+- https://neon.com/postgresql/tutorial
+- https://neon.com/postgresql/postgresql-functions
+
 #### start the client
 ```bash
 sudo -u postgres psql postgres
