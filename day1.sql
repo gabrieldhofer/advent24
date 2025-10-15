@@ -40,16 +40,10 @@ BEGIN
     raise notice ' % ', r.arr;
 
     -- create new temp table
-    CREATE TEMP TABLE tmp4 as 
-    SELECT * FROM unnest(r.arr);
+    --CREATE TEMP TABLE tmp4 as 
+    --SELECT * FROM unnest(r.arr);
 
-    --
-    for x in select * from tmp3 loop
-      --raise notice '%',  
-    end loop;
-
-
-    DROP TABLE tmp3;
+    DROP TABLE tmp4;
 
   END LOOP;
 END $$;
