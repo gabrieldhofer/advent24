@@ -1,3 +1,8 @@
+#### online docs & helpful links
+- https://neon.com/postgresql/tutorial
+- https://neon.com/postgresql/postgresql-functions
+- https://neon.com/postgresql/postgresql-advanced
+
 #### start the client
 ```bash
 sudo -u postgres psql postgres
@@ -26,5 +31,12 @@ select unnest(string_to_array(col1, ' ')) as val1 from report3 limit 3;
 ```bash
 alias run='sudo -u postgres psql postgres -f'
 ```
+
+#### Vim aliases
+```vimscript
+iab se SELECT
+iab fr FROM
+```
+
 
 
