@@ -29,19 +29,24 @@ limit 20;
 
 --DECLARE mycursor CURSOR FOR SELECT * FROM report3;
 
--- finally found something on this syntax: 
+--   finally found something on this syntax: 
 --   https://www.geeksforgeeks.org/postgresql/postgresql-block-structure/
 DO $$
 DECLARE 
   r RECORD;
+  x RECORD;
 BEGIN
   FOR r in select * from tmp3 loop
 
     raise notice ' % ', r.arr;
 
-    -- create new temp table
-    --CREATE TEMP TABLE tmp4 as 
-    --SELECT * FROM unnest(r.arr);
+    --create new temp table
+    CREATE TEMP TABLE tmp4 as 
+    SELECT * FROM unnest(r.arr);
+
+    for x in select * from tmp4 loop
+      RAISE NOTICE '%', x;
+    end loop;
 
     DROP TABLE tmp4;
 
