@@ -61,7 +61,7 @@ END $$;
 
 --https://neon.com/postgresql/postgresql-plpgsql/postgresql-create-function
 CREATE OR REPLACE FUNCTION check_safety()
-  RETURNS int 
+  RETURNS boolean
   LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -70,4 +70,29 @@ BEGIN
   -- logic 
 END;
 $$;
+
+
+CREATE OR REPLACE FUNCTION all_asc()
+  RETURNS boolean
+  LANGUAGE plpgsql
+AS $$
+DECLARE
+  -- variable declaration
+BEGIN
+  -- logic 
+END;
+$$;
+
+
+CREATE OR REPLACE FUNCTION all_desc()
+  RETURNS boolean
+  LANGUAGE plpgsql
+AS $$
+DECLARE
+  -- variable declaration
+BEGIN
+  -- logic 
+END;
+$$;
+
 
