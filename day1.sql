@@ -44,6 +44,7 @@ BEGIN
     CREATE TEMP TABLE tmp4 as 
     SELECT * FROM unnest(r.arr);
 
+    RAISE NOTICE E'\n';
     for x in select * from tmp4 loop
       RAISE NOTICE '%', x;
     end loop;
