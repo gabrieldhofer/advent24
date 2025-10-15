@@ -60,20 +60,14 @@ END $$;
 
 
 --https://neon.com/postgresql/postgresql-plpgsql/postgresql-create-function
-CREATE FUNCTION proc_name
-  RETURNS boolean
+CREATE OR REPLACE FUNCTION check_safety()
+  RETURNS int 
   LANGUAGE plpgsql
 AS $$
 DECLARE
-  -- 
+  -- variable declaration
 BEGIN
   -- logic 
 END;
 $$;
-
-
-
-
-
-
 
