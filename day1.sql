@@ -21,10 +21,10 @@ select *
 into temp tmp3
 from tmp2 limit 10;
 
--- show tmp3
+-- show 20 rows of tmp3
 SELECT unnest(arr) as unnested
 from tmp3
-limit 20;
+LIMIT 20;
 
 
 --DECLARE mycursor CURSOR FOR SELECT * FROM report3;
@@ -45,6 +45,7 @@ BEGIN
     SELECT * FROM unnest(r.arr);
 
     RAISE NOTICE E'\n';
+
     for x in select * from tmp4 loop
       RAISE NOTICE '%', x;
     end loop;
@@ -56,4 +57,23 @@ END $$;
 
 -- TODO: learn postgres SQL datatypes
 --FETCH NEXT 1 FROM mycursor;
+
+
+--https://neon.com/postgresql/postgresql-plpgsql/postgresql-create-function
+CREATE FUNCTION proc_name
+  RETURNS boolean
+  LANGUAGE plpgsql
+AS $$
+DECLARE
+  -- 
+BEGIN
+  -- logic 
+END;
+$$;
+
+
+
+
+
+
 
