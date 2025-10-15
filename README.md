@@ -27,9 +27,12 @@ postgres=# copy report3 from '/home/gabrieldhofer/Desktop/advent24/input.txt';
 select unnest(string_to_array(col1, ' ')) as val1 from report3 limit 3;
 ```
 
-#### Run Pl/pgSQL file with alias
+#### run Pl/pgSQL file with alias
 ```bash
 alias run='sudo -u postgres psql postgres -f'
 ```
 
+#### vimscript abbreviations
+```vimscript
 
+```
