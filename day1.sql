@@ -14,7 +14,15 @@ SELECT
 INTO temporary tmp2
 FROM (SELECT * FROM report3 LIMIT 20) t;
 
-select * from tmp2 limit 10;
+select * 
+into temp tmp3
+from tmp2 limit 10;
+
+SELECT unnest(arr) as unnested
+from tmp3
+limit 20;
+
+
 --DECLARE mycursor CURSOR FOR SELECT * FROM report3;
 
 -- finally found something on this syntax: 
@@ -23,16 +31,19 @@ DO $$
 DECLARE 
   r RECORD;
 BEGIN
-  FOR r in select * from tmp2 loop
+  FOR r in select * from tmp3 loop
 
     raise notice ' % ', r.arr;
 
     -- create new temp table
-    CREATE TEMP TABLE tmp3 as 
+    CREATE TEMP TABLE tmp4 as 
     SELECT * FROM unnest(r.arr);
 
     --
-    select * from tmp3;
+    for x in select * from tmp3 loop
+      --raise notice '%',  
+    end loop;
+
 
     DROP TABLE tmp3;
 
